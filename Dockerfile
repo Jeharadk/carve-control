@@ -12,8 +12,8 @@ RUN npm run bundle
 FROM node:20-alpine
 WORKDIR /app
 COPY --from=builder /app /app
-
-EXPOSE 8001          # UI / WebSocket
+# UI / WebSocket
+EXPOSE 8001     
 
 ENTRYPOINT ["node","lib/main.js"]
 CMD ["autocon=1","proxy=1","web=1","webport=8001"]
