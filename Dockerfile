@@ -5,7 +5,7 @@ WORKDIR /app
 # grab source
 RUN apk add --no-cache git
 RUN git clone --depth 1 https://github.com/GridSpace/carve-control .
-RUN npm ci
+RUN npm install --no-audit --no-fund
 RUN npm run bundle
 
 # ---------- runtime stage ----------
